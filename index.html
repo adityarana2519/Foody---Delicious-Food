@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foody - Delicious Food</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-egg-fried"></i> Foody
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+
+            <ul class="navbar-nav ms-auto me-4">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#categories">Categories</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">Our Menu</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#offers">Offers</a>
+                </li>
+
+            </ul>
+
+            <form class="d-flex me-3" id="searchForm">
+                <input class="form-control me-2" type="search"
+                    id="searchInput" placeholder="Search food...">
+                <button class="btn btn-orange" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+
+            <button class="btn btn-outline-dark position-relative"
+                data-bs-toggle="offcanvas" data-bs-target="#cartPanel">
+                <i class="bi bi-cart3"></i> Cart
+                <span id="cartCount"
+                    class="badge bg-danger rounded-pill">0</span>
+            </button>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="col-md-7">
+
+            <h1>Delicious Food,<br>Delivered With Love!</h1>
+
+            <p>
+                Fresh, tasty and delicious food is waiting for you.
+                Order your favourite meals today!
+            </p>
+
+            <a href="#menu" class="btn btn-orange btn-lg mt-3">
+                Explore Menu <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Categories -->
+<section class="container my-5" id="categories">
+
+    <h2 class="section-title text-center">
+        Explore <span>Categories</span>
+    </h2>
+
+    <div class="row g-4">
+
+        <div class="col-6 col-md-3">
+            <a href="#pizzas" class="category-card">
+                <i class="bi bi-pie-chart-fill"></i>
+                <h5 class="mt-3">Pizza</h5>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <a href="#burgers" class="category-card">
+                <i class="bi bi-egg-fried"></i>
+                <h5 class="mt-3">Burgers</h5>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <a href="#momos" class="category-card">
+                <i class="bi bi-basket-fill"></i>
+                <h5 class="mt-3">Momos</h5>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-3">
+            <a href="#fries" class="category-card">
+                <i class="bi bi-box-seam-fill"></i>
+                <h5 class="mt-3">Fries</h5>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Special Offer -->
+<section class="container my-5" id="offers">
+    <div class="offer text-center">
+
+        <h2>Special Offer!</h2>
+
+        <h3>Get 20% OFF on Your First Order</h3>
+
+        <p class="text-secondary">
+            Enjoy your favourite food at an amazing price.
+        </p>
+
+        <a href="#menu" class="btn btn-orange">
+            Order Now
+        </a>
+
+    </div>
+</section>
+
+
+<!-- Food Menu -->
+<section class="container my-5" id="menu">
+
+    <h2 class="section-title text-center">
+        Our <span>Delicious Menu</span>
+    </h2>
+
+    <div id="noResults">
+        <i class="bi bi-search fs-1"></i>
+        <h4 class="mt-3">No food found!</h4>
+        <p>Try searching for something else.</p>
+    </div>
+
+
+    <!-- Pizza -->
+    <div class="food-section mb-5" id="pizzas">
+
+        <h3 class="section-title">Pizza</h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-4 food-item" data-name="margherita pizza cheese">
+                <div class="card food-card">
+
+                    <img src="https://cdn.loveandlemons.com/wp-content/uploads/opengraph/2023/07/margherita-pizza-recipe.jpg">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Margherita Pizza</h5>
+                            <span class="rating">★ 4.5</span>
+                        </div>
+
+                        <p class="card-text">Classic cheese pizza.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹199</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Margherita Pizza" data-price="199">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 food-item" data-name="farmhouse pizza vegetable">
+                <div class="card food-card">
+
+                    <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=600">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Farmhouse Pizza</h5>
+                            <span class="rating">★ 4.7</span>
+                        </div>
+
+                        <p class="card-text">Loaded with fresh vegetables.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹249</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Farmhouse Pizza" data-price="249">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 food-item" data-name="cheese pizza garlic">
+                <div class="card food-card">
+
+                    <img src="https://www.recipetineats.com/tachyon/2023/05/Garlic-cheese-pizza_9.jpg">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Cheese Pizza</h5>
+                            <span class="rating">★ 4.6</span>
+                        </div>
+
+                        <p class="card-text">Extra cheese and garlic flavour.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹279</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Cheese Pizza" data-price="279">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Burgers -->
+    <div class="food-section mb-5" id="burgers">
+
+        <h3 class="section-title">Burgers</h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-4 food-item" data-name="cheese burger">
+                <div class="card food-card">
+
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Cheese Burger</h5>
+                            <span class="rating">★ 4.5</span>
+                        </div>
+
+                        <p class="card-text">Burger with extra cheese.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹129</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Cheese Burger" data-price="129">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 food-item" data-name="veg burger vegetable">
+                <div class="card food-card">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSihXUqWEPEZwLabMmikWXcBni4HUtYhTb5psqG7ffexQ&s=10">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Veg Burger</h5>
+                            <span class="rating">★ 4.3</span>
+                        </div>
+
+                        <p class="card-text">Fresh vegetable burger.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹99</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Veg Burger" data-price="99">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 food-item" data-name="chicken burger">
+                <div class="card food-card">
+
+                    <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=600">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Chicken Burger</h5>
+                            <span class="rating">★ 4.8</span>
+                        </div>
+
+                        <p class="card-text">Juicy chicken burger.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹179</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Chicken Burger" data-price="179">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Momos -->
+    <div class="food-section mb-5" id="momos">
+
+        <h3 class="section-title">Momos</h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-4 food-item" data-name="veg momos steamed">
+                <div class="card food-card">
+
+                    <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?w=600">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Veg Momos</h5>
+                            <span class="rating">★ 4.4</span>
+                        </div>
+
+                        <p class="card-text">Steamed vegetable momos.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹89</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Veg Momos" data-price="89">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 food-item" data-name="fried momos crispy">
+                <div class="card food-card">
+
+                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Fried Momos</h5>
+                            <span class="rating">★ 4.6</span>
+                        </div>
+
+                        <p class="card-text">Crispy fried momos.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹119</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Fried Momos" data-price="119">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 food-item" data-name="paneer momos">
+                <div class="card food-card">
+
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Paneer Momos</h5>
+                            <span class="rating">★ 4.5</span>
+                        </div>
+
+                        <p class="card-text">Delicious paneer stuffed momos.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹139</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Paneer Momos" data-price="139">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- French Fries -->
+    <div class="food-section mb-5" id="fries">
+
+        <h3 class="section-title">French Fries</h3>
+
+        <div class="row g-4">
+
+            <div class="col-md-4 food-item" data-name="classic french fries">
+                <div class="card food-card">
+
+                    <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Classic Fries</h5>
+                            <span class="rating">★ 4.4</span>
+                        </div>
+
+                        <p class="card-text">Crispy salted french fries.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹79</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Classic Fries" data-price="79">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 food-item" data-name="peri peri fries">
+                <div class="card food-card">
+
+                    <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=600">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Peri Peri Fries</h5>
+                            <span class="rating">★ 4.7</span>
+                        </div>
+
+                        <p class="card-text">Spicy peri peri flavoured fries.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹109</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Peri Peri Fries" data-price="109">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 food-item" data-name="cheese fries">
+                <div class="card food-card">
+
+                    <img src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=600">
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Cheese Fries</h5>
+                            <span class="rating">★ 4.6</span>
+                        </div>
+
+                        <p class="card-text">Fries topped with melted cheese.</p>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="food-price">₹129</span>
+                            <button class="btn btn-orange add-cart"
+                                data-name="Cheese Fries" data-price="129">
+                                Add <i class="bi bi-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Cart Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel">
+
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">
+            <i class="bi bi-cart3"></i> Your Cart
+        </h5>
+
+        <button type="button" class="btn-close"
+            data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+        <div id="cartItems">
+            <p class="text-muted">Your cart is empty.</p>
+        </div>
+
+        <hr>
+
+        <div class="d-flex justify-content-between">
+            <h5>Total:</h5>
+            <h5 class="food-price" id="cartTotal">₹0</h5>
+        </div>
+
+        <button class="btn btn-orange w-100 mt-3" id="checkoutBtn">
+            Checkout
+        </button>
+
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <h3 class="fw-bold text-warning">
+                    <i class="bi bi-egg-fried"></i> Foody
+                </h3>
+
+                <p>
+                    Good food, good mood!
+                    Enjoy delicious food with Foody.
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <p><a href="#">Home</a></p>
+                <p><a href="#categories">Categories</a></p>
+                <p><a href="#menu">Our Menu</a></p>
+                <p><a href="#offers">Offers</a></p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="bi bi-instagram fs-3 me-3"></i></a>
+                <a href="#"><i class="bi bi-facebook fs-3 me-3"></i></a>
+                <a href="#"><i class="bi bi-twitter-x fs-3"></i></a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="text-center mb-0">
+            © 2026 Foody. All Rights Reserved.
+        </p>
+
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
