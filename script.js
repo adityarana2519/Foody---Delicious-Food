@@ -1,5 +1,3 @@
-    // Search Functionality
-
     let searchInput = document.getElementById("searchInput");
     let foodItems = document.querySelectorAll(".food-item");
     let noResults = document.getElementById("noResults");
@@ -37,9 +35,6 @@
         });
     });
 
-
-    // Cart Functionality
-
     let cart = [];
 
     let cartCount = document.getElementById("cartCount");
@@ -76,8 +71,6 @@
 
     });
 
-
-    // Update Cart
 
     function updateCart() {
 
@@ -122,18 +115,12 @@
 
     }
 
-
-    // Remove Item
-
     function removeItem(index) {
 
         cart.splice(index, 1);
         updateCart();
 
     }
-
-
-    // Checkout
 
     document.getElementById("checkoutBtn").addEventListener("click", function() {
 
